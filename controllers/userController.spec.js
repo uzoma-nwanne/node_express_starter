@@ -1,9 +1,11 @@
 const request = require('supertest');
 const { app } = require('../server');
+const { mongoConnect } = require('../utils/database');
 
 describe('userController', () => {
     // let's add a user before each test that we can rely on to be in the database
     beforeEach(async () => {
+        mongoConnect();
         await request(app).post('/user').send({
             id: '123',
             email: 'brianjenney83@gmail.com',

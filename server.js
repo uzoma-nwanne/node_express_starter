@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const allRoutes = require("./routes");
 const cors = require("cors");
 const { config } = require("dotenv");
+const { mongoConnect } = require("./utils/database");
 
 // loads environment vars from .env
 config();
@@ -12,6 +13,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV !== "test") {
+  mongoConnect()
   app.listen(port, () => console.log(`Running on port ${port}`));
 }
 
