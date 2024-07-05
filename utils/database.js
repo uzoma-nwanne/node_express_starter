@@ -4,7 +4,7 @@ let _db ;
 
 const mongoConnect = () => {
   MongoClient.connect(
-    'mongodb+srv://uzomanwanne:uzomanwanne@cluster0.nlsnhtn.mongodb.net/webapp'
+    `${process.env.MONGO_URI}`
   ) //I did not use .env so that it will be easy for someone to help me out
     .then((client) => {
       console.log("Connected to MongoDB");
