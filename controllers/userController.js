@@ -2,6 +2,11 @@
 // this object will act as temporary storage for our user object
 const EPHEMERAL_DB = {};
 
+/** 
+ * returns a user
+ * @param req is the request object
+ * @param res is the response object
+*/
 const getUser = (req, res, next) => {
   const { id } = req.params;
 
