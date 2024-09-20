@@ -5,7 +5,7 @@ const uploadCsv = async (req, res, next) => {
   try {
      const { file } = req;
 
-      const json = [];
+    const json = [];
 
     // we want to wait for the file to be parsed before we send a response
     await new Promise((res, rej) => {
