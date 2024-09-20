@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const uploadCsv = async (req, res, next) => {
   try {
-    const { file } = req;
+     const { file } = req;
 
     const json = [];
 
