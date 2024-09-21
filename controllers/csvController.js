@@ -1,9 +1,15 @@
-const { parse } = require('csv-parse');
 const fs = require('fs');
+const { parse } = require('csv-parse');
 
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 const uploadCsv = async (req, res, next) => {
   try {
-     const { file } = req;
+    const { file } = req;
 
     const json = [];
 
@@ -30,9 +36,9 @@ const uploadCsv = async (req, res, next) => {
   } finally {
     // we want to clean up the files after we are done with them
     const files = fs.readdirSync('./temp');
-    files.forEach((file) => {
+    for (const file of files) {
       fs.unlinkSync(`./temp/${file}`);
-    });
+    }
   }
 };
 

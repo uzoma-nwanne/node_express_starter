@@ -7,7 +7,8 @@
     "test": "jest",
     "dev": "nodemon server.js",
     "lint": "eslint ./**/*.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:fix": "eslint ./**/*.js --fix"
   },
   "keywords": [],
   "author": "",

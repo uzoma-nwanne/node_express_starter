@@ -10,9 +10,9 @@ describe('csvController', () => {
 
   afterAll(() => {
     const files = fs.readdirSync('./temp');
-    files.forEach((file) => {
+    for (const file of files) {
       fs.unlinkSync(`./temp/${file}`);
-    });
+    }
   });
 
   it('parses datat from a csv file', async () => {

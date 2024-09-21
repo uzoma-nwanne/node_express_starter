@@ -5,12 +5,13 @@ module.exports = {
     es2021: true,
   },
   extends: ['prettier'],
-  plugins: ['simple-import-sort', 'require-sort'],
+  plugins: ['simple-import-sort', 'require-sort', 'unicorn'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
   },
   rules: {
+    'unicorn/no-array-for-each': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'require-sort/require-sort': 'error',
